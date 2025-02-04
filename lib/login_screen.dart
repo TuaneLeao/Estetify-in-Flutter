@@ -30,13 +30,17 @@ class _LoginPageState extends State<LoginPage> {
     TextEditingValue username = _usernameController.value; 
     TextEditingValue password = _passwordController.value;
 
-    if(password.text == '1234' && username.text == 'admin'){
-      Navigator.pushReplacementNamed(context, '/home');
-    }else{
-     setState(() {
-     _isErrorVisible = true;
-    });}
+    setState(() {
+      if(password.text == '1234' && username.text == 'admin'){
+        Navigator.pushReplacementNamed(context, '/home'); 
+        _isErrorVisible = false;
+      } else {
+        _isErrorVisible = true;
+      }
+      });
   }
+    
+  
 
   @override
   Widget build(BuildContext context) {

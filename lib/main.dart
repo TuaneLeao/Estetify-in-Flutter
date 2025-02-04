@@ -3,6 +3,7 @@ import 'package:teste/login_screen.dart';
 import 'home_screen.dart';
 import 'profile_screen.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'widgets/nav_bar.dart';
 void main() {
   runApp(const MyApp());
 }
@@ -43,7 +44,7 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/': (context) => const LoginPage(),
-        '/home': (context) => const HomeScreen(title: homeTitle),
+        '/home': (context) => const NavBar(),
         '/profile': (context) => const ProfileScreen(),
       },
     );

@@ -55,7 +55,6 @@ class _HomeScreen extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
@@ -76,6 +75,7 @@ class _HomeScreen extends State<HomeScreen> {
           ),
         ],
       ),
+      
       body:  CustomScrollView(
         slivers: [
           SliverList(
@@ -117,7 +117,7 @@ class _HomeScreen extends State<HomeScreen> {
         ],
       ),
         
-      bottomNavigationBar: NavBar(),
+      // bottomNavigationBar: NavBar(),
     );
   }
 }

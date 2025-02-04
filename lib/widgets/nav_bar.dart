@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:teste/cart_screen.dart';
 import 'package:teste/home_screen.dart';
 import 'package:teste/profile_screen.dart';
 
@@ -50,10 +51,6 @@ class _NavBar extends State<NavBar> {
             label: 'Home',
           ),
           NavigationDestination(
-            icon: Icon(Icons.search),
-            label: 'Search',
-          ),
-          NavigationDestination(
             icon: Icon(Icons.shopping_cart),
             label: 'Cart',
           ),
@@ -69,6 +66,7 @@ class _NavBar extends State<NavBar> {
         onPageChanged: onPageChanged,
         children: [
           HomeScreen(title: 'Home'),
+          CartScreen(),
           ProfileScreen(),
           
         ],
