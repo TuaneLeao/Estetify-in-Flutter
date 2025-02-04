@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'widgets/nav_bar.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key, required this.title});
@@ -21,7 +20,6 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreen extends State<HomeScreen> {
-  int _selectedIndex = 0;
   bool _isButton1Selected = false;
   bool _isButton2Selected = false;
 
@@ -39,15 +37,6 @@ class _HomeScreen extends State<HomeScreen> {
       _isButton2Selected = !_isButton2Selected;
       if(_isButton1Selected){
         _isButton1Selected = false;
-      }
-    });
-  }
-
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-      if(_selectedIndex == 3){
-        Navigator.pushNamed(context, '/profile');
       }
     });
   }
@@ -79,11 +68,10 @@ class _HomeScreen extends State<HomeScreen> {
       body:  CustomScrollView(
         slivers: [
           SliverList(
-            delegate: SliverChildBuilderDelegate(
+            delegate: 
+            SliverChildBuilderDelegate(
               (context, index) {
-                return Column(
-                  children: [
-                    Container(
+                return Container(
                       width: 375,
                       height: 54,
                       color: Colors.white,
@@ -107,17 +95,16 @@ class _HomeScreen extends State<HomeScreen> {
                           trailing: Icon(Icons.more_horiz)
                         ),
                       ),
-                    )
-                  ],
-                );
+                    );
               },
-              childCount: 1,
+              childCount: 15,
             ),
+            
           ),
         ],
       ),
         
-      // bottomNavigationBar: NavBar(),
+      // bottomNavigationBar: Navigation(),
     );
   }
 }

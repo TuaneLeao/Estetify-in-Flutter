@@ -3,15 +3,13 @@ import 'package:teste/cart_screen.dart';
 import 'package:teste/home_screen.dart';
 import 'package:teste/profile_screen.dart';
 
-class NavBar extends StatefulWidget {
-    
-  
-    const NavBar({
+class Navigation extends StatefulWidget {
+    const Navigation({
       super.key});
-    @override State<NavBar> createState() => _NavBar();
+    @override State<Navigation> createState() => _Navigation();
 }
 int _currentIndex = 0;
-class _NavBar extends State<NavBar> {
+class _Navigation extends State<Navigation> {
     late PageController pageController;
 
     @override

@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:teste/login_screen.dart';
-import 'home_screen.dart';
 import 'profile_screen.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'widgets/nav_bar.dart';
+import 'widgets/navigation.dart';
 void main() {
   runApp(const MyApp());
 }
@@ -14,7 +13,6 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    const String homeTitle = "Primeiro Teste";
 
     return MaterialApp(
       title: 'Primeiro Teste',
@@ -44,7 +42,7 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/': (context) => const LoginPage(),
-        '/home': (context) => const NavBar(),
+        '/home': (context) => const Navigation(),
         '/profile': (context) => const ProfileScreen(),
       },
     );
