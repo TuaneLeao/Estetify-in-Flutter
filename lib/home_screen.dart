@@ -68,38 +68,57 @@ class _HomeScreen extends State<HomeScreen> {
       body:  CustomScrollView(
         slivers: [
           SliverList(
-            delegate: 
-            SliverChildBuilderDelegate(
+            delegate: SliverChildListDelegate(
+              [
+                SizedBox(
+                  height: 100,
+                  child: ListView.builder(
+                    scrollDirection: Axis.horizontal,
+                    itemCount: 10,
+                    itemBuilder: (context, index) {
+                      return Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: CircleAvatar(
+                          radius: 30,
+                          backgroundColor: Colors.blue,
+                          child: Icon(Icons.person, size: 30, color: Colors.white),
+                        ),
+                      );
+                    },
+                  ),
+                ),
+              ],
+            ),
+          ),
+          SliverList(
+            delegate: SliverChildBuilderDelegate(
               (context, index) {
-                return Container(
-                      width: 375,
-                      height: 54,
-                      color: Colors.white,
-                      child: Center(
-                        child: ListTile(
-                          leading: ClipOval(
-                            child: SizedBox(
-                              width: 35,
-                              height: 35,
-                              child: Icon(Icons.person)
-                            ),
-                          ),
-                          title: Text(
-                            'username', 
-                            style: TextStyle(fontSize: 12)
-                          ),
-                          subtitle: Text(
-                            'location', 
-                            style: TextStyle(fontSize: 10),
-                          ),
-                          trailing: Icon(Icons.more_horiz)
+                return SizedBox(
+                  width: double.infinity,
+                  child: Center(
+                    child: ListTile(
+                      leading: ClipOval(
+                        child: SizedBox(
+                          width: 35,
+                          height: 35,
+                          child: Icon(Icons.person),
                         ),
                       ),
-                    );
+                      title: Text(
+                        'username',
+                        style: TextStyle(fontSize: 12),
+                      ),
+                      subtitle: Text(
+                        'location',
+                        style: TextStyle(fontSize: 10),
+                      ),
+                      trailing: Icon(Icons.more_horiz),
+                    ),
+                  ),
+                );
               },
-              childCount: 15,
+              childCount: 18,
             ),
-            
           ),
         ],
       ),
